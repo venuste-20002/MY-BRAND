@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="dash.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+</head>
+<body>
+    <div class="dashboard">
+     <div class="dashboard1">
+        <div class="dashboardtitle"><p>DASHBOARD</p></div>
+          <ul class="custom-list">
+            <a href="/landingblog.html"style="color:white ;"><li><i class="fa fa-newspaper-o" aria-hidden="true" style="color:white"></i> BLOGS</li></a><br>
+            <a href="/message.html" style="color: white;"><li><i class="fa fa-comments" aria-hidden="true" style="color:white"></i> Messages</li></a><br>
+            <a href="/users.html" style="color: white;"><li><i class="fa fa-users" aria-hidden="true" style="color: white;"></i> USERS </li></a><br>
+          </ul>
+
+     </div>
+     
+
+     <div class="manageArticles">
+        <div>
+        <h1>Add A Blog</h1>
+        </div>
+        <div class="manageArticles1">
+        <form action="#" id="form2" id="blogForm" onsubmit="submitForm(event)">
+            <label for="a_title">Add Title: </label><br>
+            <input required type="text" id="a_title" placeholder="Title"><span id="a_titleError" class="error"></span><br>
+            <label for="a_desc">Add Other Name: </label><br>
+            <input required type="text" id="a_desc" placeholder="other"><br>
+            <label for="a_category">Category:</label><br>
+            <select required id="a_category">
+                <option disabled selected>--Choose ----</option>
+                <option value="DATABASE WITH SUPABASE">DATABASE WITH SUPABASE</option>
+                <option value="PYTHON PROGRAMMING">PYTHON PROGRAMMING</option>
+                <option value="ELECTRONICS AND ENVIRONMENT">ELECTRONICS AND ENVIRONMENT</option>
+            </select><br>
+            <label for="a_content">Add Content:</label><br>
+            <textarea required id="a_content" cols="30" rows="10"></textarea><br>
+            <label for="cover">Cover image:</label><br>
+            <input required type="file"  id="cover">
+            <img id="preview" style="width: 345px;">
+            <span class="add">
+                <button type="submit" id="form2_sub">ADD ARTICLE</button>
+                <button type="reset">CANCEL</button>
+            </span>
+        </form>
+    </div>
+     </div>
+     </div>
+
+     <script src="dash.js"></script>
+</body>
+</html>
