@@ -1,0 +1,120 @@
+:root {
+    --dash: rgb(232, 235, 239);
+}
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.dashboard1 {
+    padding: 12vh 5vw 3vh 10vw;
+    position: relative;
+    height: 90%;
+    width: 10%;
+    top: 100%;
+    left: 70.25%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.667);
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.dashboardtitle {
+    font-size: 24px;
+    position: relative;
+    color: white;
+    top: 20px;
+}
+
+.manageArticles {
+    padding: 12vh 5vw 3vh 10vw;
+    position: relative;
+    height: 90%;
+    width: 60%;
+    top: 7%;
+    left: 110%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.667);
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.manageArticles1 {
+    padding: 12vh 5vw 3vh 10vw;
+    overflow: hidden;
+    position: relative;
+    height: 90%;
+    width: 100%;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.manageArticles h1 {
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    #form2 input {
+        width: 90%;
+    }
+    #form2 textarea {
+        width: 90%;
+    }
+}
+
+#form2 span {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#form2 span button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#form2 span button:hover {
+    opacity: .8;
+}
+
+#form2 span :nth-child(1) {
+    background: var(--green);
+    margin-right: 10px;
+}
+
+#form2 span :nth-child(2) {
+    background: 4E7598;
+}
+
+#form2 select {
+    padding: 5px 10px;
+    margin-bottom: 3vh;
+    outline: none;
+}
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-list li {
+    position: relative;
+    top: 100px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #4E7598;
+}

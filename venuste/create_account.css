@@ -1,0 +1,205 @@
+:root{
+    --bg-color:  #252525;
+    --white-text: #ffffff;
+    --blue-color: #0832FFA6;
+}
+
+.navbar{
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem 2rem;
+    width: 100vw;
+    z-index: 16;
+    position: fixed;
+    top: 0;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    font-weight: 600;
+    margin: .5rem;
+}
+.logo img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navlist ul{
+    margin: 0;
+    padding: 0;
+    padding-right: 3rem;
+    display: flex;
+    transition: 2s;
+}
+.navlist li{
+    list-style: none;
+    font-weight: 700;
+}
+.navlist li a{
+    text-decoration: none;
+    font-size: medium;
+    color: var(--black);
+    padding: 1.5rem;
+    display: block;
+}   
+
+.navlist li a:hover{
+    color: var(--green);
+}
+
+
+.menu{
+    position: absolute; 
+    top: 1.5rem;
+    right: .75rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 18px;
+
+}
+
+.bar{
+    width: 100%;
+    height: 3px;
+    background: var(--black);
+}
+
+@media  (max-width: 700px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .2rem 0;
+    }
+    .navlist {
+        display: none;
+    }
+    .navlist ul{
+        width: 100%;
+        flex-direction: column;
+        padding-right: unset;
+        
+    }
+    .navlist ul li{
+        width: 98vw;
+        text-align: right;
+        border-top: 0.1px solid var(--lightgray);
+        font-size: 10px;
+       
+    }
+   
+    .navlist li a{
+        padding: 1rem;
+    }
+    .menu{
+        display: flex;
+    }
+    .navlist.active{
+        display: flex;
+    }
+    
+    
+}
+.create_account{
+    background:rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.create {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.form {
+    flex: 1;
+    height: 100%;
+    background: white;
+    text-size-adjust: 35px;
+    padding: 7px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.logsub {
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+    padding: 7px 40px 20px 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: url('image.jpeg');
+    background-size: cover;
+}
+
+
+.form .get_started {
+    text-align: center;
+    margin-top: 20px;
+}
+.form input[type="text"].error,
+.form input[type="email"].error,
+.form input[type="password"].error{
+    border: 1px solid red;
+}
+
+.form .get_started .get {
+    padding: 10px 20px;
+    background-color: #4e7598; 
+    color: #ffffff; 
+    border: none;
+    left: 120px;
+    top: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.form h1{
+    font-size: 40px;
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form input{
+    width: 100%;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    font-size: 25x;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    outline: none;
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+    .get {
+        background: #4e7598;
+        position: relative;
+        top: 20%; 
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+    }
+    
+
+.form input[type="submit"]:hover{
+    opacity: 0.8;
+    font-weight: bold;
+}

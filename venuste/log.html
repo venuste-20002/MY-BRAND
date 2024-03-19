@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ------- font cdn -------------  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="log.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+</head>
+</html>
+<div class="navbar">
+    <div class="logo">
+        <img src="DGS_2583-1.JPG" alt="logo" class="small-profile-image">
+        <p>RUKUNDO VENUSTE</p>
+    </div>
+
+    <div class="menu" disabled>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="navlist">
+        <ul class="navlist1">
+            <li class="list_item"><a href="index.html">HOME</a></li>
+            <li class="list_item"><a href="index.html">ABOUT</a></li>
+            <li class="list_item"><a href="index.html">CONTACT</a></li>
+            <li class="list_item"><a href="blogs.html">BLOG</a></li>
+            <li class="list_item"><a href="log.html">LOGIN</a></li>
+        </ul>
+    </div>
+
+</div>
+<body class="login">
+    <div class="main_container">
+        <div class="logsub">
+        </div>
+        <form class="form" id="loginForm" action="#" showError="return validateForm()">
+            <h1>LOGIN HERE </h1>
+            <p>Email: </p>
+            <input type="text" id="email" name="email"  placeholder="Name here">  <span id="emailError" class="error" ></span>
+            <!-- <input type="text" id='name' name="name" placeholder="Name here" required> <span id="nameError" class="error"></span> -->
+            <p>Password: </p>
+            <input type="password" id="password" name="password" placeholder="***" required><span id="passwordError" class="error"></span>
+            <input type="submit" id="submit" value="login"> 
+            <p>Don't Have an account? <a href="create_account.html">create account</a></p>
+        </form>
+    </div>
+    <script src="log.js"></script>
+</body>
+</html>

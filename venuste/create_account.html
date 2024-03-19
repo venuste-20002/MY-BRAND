@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="create_account.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE ACCOUNT</title>
+</head>
+<body class="create_account">
+    <div class="navbar">
+        <div class="logo">
+            <img src="DGS_2583-1.JPG" alt="logo" class="small-profile-image">
+            <p>RUKUNDO VENUSTE</p>
+        </div>
+
+        <div class="menu" disabled>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="navlist">
+            <ul class="navlist1">
+                <li class="list_item"><a href="index.html">HOME</a></li>
+                <li class="list_item"><a href="index.html">ABOUT</a></li>
+                <li class="list_item"><a href="index.html">CONTACT</a></li>
+                <li class="list_item"><a href="blog.html">BLOG</a></li>
+                <li class="list_item"><a href="log.html">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="create">
+        <form class="form" id="registerUser" action="#" showError="return validateForm()">
+            <h1>CREATE ACCOUNT</h1>
+            <p>Username:</p>
+            <input type="text" id="username" placeholder="Enter your username" required><span id="usernameError" class="error"></span>
+            <p>Email:</p>
+            <input type="email" id="email" placeholder="Enter your email" required><span id="emailError" class="error"></span>
+            <p>Password:</p>
+            <input type="password" id="password" placeholder="Enter your password" required><span id="passwordError" class="error"></span>
+            <input type="submit" class="get" value="Get Started">
+        </form>
+        <div class="logsub"></div>
+    </div>
+
+    <script src="create_account.js"></script>
+</body>
+</html>

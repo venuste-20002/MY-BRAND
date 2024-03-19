@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- ------ font awesome ---------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- --- font cdn ---  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY BRAND</title>
+</head>
+<body>
+   
+
+
+    <div class="container">
+        <div id="home">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="DGS_2583-1.JPG" alt="logo" class="small-profile-image">
+                    <p>RUKUNDO VENUSTE</p>
+                </div>
+
+                <div class="menu" disabled>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="navlist">
+                    <ul class="navlist1">
+                        <li class="list_item"><a href="#home">HOME</a></li>
+                        <li class="list_item"><a href="#about">ABOUT</a></li>
+                        <li class="list_item"><a href="#messages">CONTACT</a></li>
+                        <li class="list_item"><a href="blogs.html">BLOG</a></li>
+                        <li class="list_item"><a href="log.html">LOGIN</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="socials">
+                <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="hero">
+                <p class="hello">Hello,I'm</p>
+                <p class="rukundo">RUKUNDO VENUSTE</p>
+                <P class="creative">CREATIVE FRONT-END WEB DEVELOPER</P>
+                <img class="RUPA" src="DGS_2583-1.JPG" alt="black">
+            </div>
+        </div>
+        
+
+        
+        
+        <div id="about">
+            <h1 class="section_title">ABO<span style="border-bottom: 5px solid #4E7598; padding-bottom: 15px;">UT </span>ME</h1>
+            <p class="about_text">Hi there! I'm RUKUNDO, and I'm the creator of this personal blog. 
+                I have a passion for programming and technology. With this blog, I aim to share my thoughts, 
+                experiences, and knowledge on web development and AI. </p>
+               
+
+            <div class="more">
+            
+                <div class="know">
+
+                    <h2 style="margin-bottom: 6vh ;">know more about!</h2>
+                    <p>I am a front-end developer with a passion for crafting beautiful and functional websites. I have experience working with HTML, CSS, JavaScript, and various<a style="text-decoration: none; color: var(--green);">  front-end frameworks</a>.
+                        <br/><br>
+                        I have a strong understanding of responsive design and know how to create user-friendly interfaces that work seamlessly across different devices. I'm dedicated to staying up-to-date with the latest <a style="color: var(--green); text-decoration: none;"> web development trends and technologies</a>. 
+                       <br><br> Whether it's building custom UI components or improving website performance, I love finding creative<a style="color: var(--green); text-decoration: none;">  solutions to challenges</a> and delivering high-quality results.</p>
+
+                    
+                     <span><a href="#messages" class="small_button">CONTACT</a></span>
+
+                </div>
+
+                <div class="skills">
+                    <h2 style="margin-bottom: 4vh ;">Skills</h2>
+
+                    <div class="programming">
+                    
+                        <div class="flex_skills">
+                            <div class="skill_item">
+                                <span class="box1">
+                                    <img src="python.png"> 
+                                </span>
+                                <p>Python</p>
+                            </div>
+                            <div class="skill_item">
+                                <span class="box1">
+                                    <img src="../photos/django.jfif"> 
+                                </span>
+                                <p>Django</p>
+                            </div>
+                        </div>
+
+                        <div class="flex_skills">
+                            <div class="skill_item">
+                                <span class="box1">
+                                    <img src="css3.png"> 
+                                </span>
+                                <p>CSS</p>
+                            </div>
+                            <div class="skill_item">
+                                <span class="box1">
+                                    <img src="html5.png"> 
+                                </span>
+                                <p>HTML</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="technical">
+                        <h3>Technical sills</h3>
+                        <ul>
+                            <li>Trello for project management</li>
+                            <li>Slack for communication</li>
+                            <li>Time management</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------message _____________ -->
+
+        <div class="snackbar">
+            <p>Your message is successfully sent</p>
+        </div>
+
+        <div id="messages">
+            <h1 class="section_title">CO<span style="border-bottom: 5px solid #4E7598; padding-bottom: 15px;">NTA</span>CT</h1>
+
+            
+            <form class="form1" onsubmit="submitForm(event)">
+                <p>Name</p>
+                <div>
+                    <input  id="senderName" type="text"  placeholder="Enter Your Name">
+                    <span class="output success"></span>
+                </div>
+                <p>Email</p>
+                <div>
+                    <input  type="text"  id="email" placeholder="Enter Your Email">
+                    <span class="output success">*Enter a valid email please!</span>
+                </div>
+                <p>Message</p>
+                <div>
+                    <textarea id="messageContent"  rows="20" cols="50" ></textarea>
+                    <span class="output success">*Enter your message please!</span>    
+                </div>
+               
+        
+                <span class="submit_button">
+                <button type="submit" id="form_submit">
+                    SUBMIT
+                </button>
+                </span>
+            </form>
+            
+        </div>
+
+        <div id="footer">
+            <div class="container2">
+                <div class="social">
+                    <h3>SOCIALS</h3>
+                    <div class="social2">
+                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="copyright">
+                R.VENUSTE © 2024  All rights Reserved <br>
+                      Tel No: +250 787682839
+            </div>
+        </div>
+    </div>
+
+    <script src="cantact.js"></script>
+</body>
+</html>
