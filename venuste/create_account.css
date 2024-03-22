@@ -170,7 +170,7 @@
     transition: background-color 0.3s ease;
 }
 .form h1{
-    font-size: 25px;
+    font-size: 18px;
     color: var(--green);
     text-align: center;
     margin-bottom: 20px;
