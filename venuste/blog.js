@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             displayBlog(blogData); // Pass blogData to displayBlog
         } catch (error) {
-            console.error('Error fetching blog:', error);
+            // console.error('Error fetching blog:', error);
         }
     };
     
@@ -202,9 +202,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
- 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const commentForm = document.getElementById('commentForm');
 
+    commentForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        const blogId = document.getElementById("blogId").value.trim(); // Retrieve blogId
 
+        // input of the  fetch
+        if (!name || !email || !comment || !blogId) {
+            showError('Please enter both name, email, and comment.');
+            return;
+        }
 
+        try {
+            console.log(name)
+            const response = await fetch('http://localhost:3005/api/v1/comments/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, comment, blogId })
+            });
+
+            if (!response.ok) { 
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to create');
+            }
+
+            const data = await response.json();
+            const commentData = data.data;
+            console.log(commentData);
+
+            window.location.href = 'log.html';
+        } catch (error) {
+            showError(error.message || 'Failed to create. Please try again.');
+        }
+    });
+});

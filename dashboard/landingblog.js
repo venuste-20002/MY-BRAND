@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const horizontalBar = document.getElementById("horizontalBar");
+    const verticalNav = document.querySelector(".vertical .list");
+
+    horizontalBar.addEventListener("click", function() {
+        // Toggle class to show/hide the vertical navigation
+        verticalNav.classList.toggle("active");
+    });
+});
+
+
+
+
 // Initialize blogData as an empty array
 let blogData = [];
 
@@ -8,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function to display blogs
 const displayBlogs = () => {
-    const allBlogs = document.getElementById('display_blogs');
+    const allBlogs = document.getElementById('userContainers');
     allBlogs.innerHTML = '';
 
     if (!Array.isArray(blogData) || blogData.length === 0) {
@@ -27,16 +40,17 @@ const createBlogElement = (blog) => {
     const blogElement = document.createElement('div');
     blogElement.classList.add('blog');
     blogElement.innerHTML = `
+    <div class="card mt-4 p-3">
         <div class="allblog">
-            <h2 id="a_title">${blog.title}</h2>
+            <h2 id="a_title">Title:${blog.title}</h2>
             <div class="desc">
-                <p>${blog.desc}</p>
+                <p>Description:${blog.description}</p>
             </div>
             <div class="category">
-                <p>${blog.category}</p>
+                <p>Date:${blog.createdAt}</p>
             </div>
             <div>
-                <hr style="width: 108%; height: 0.5px; border: none; background-color:black;">
+                <hr style="width: 100%; height: 0.5px; border: none; background-color:black;">
                 <div class="icons">
                     <div class="icon1">
                         <i class="fa-solid fa-eye" onclick="navigatToOneBlogPage('${blog._id}')"></i>
@@ -46,7 +60,8 @@ const createBlogElement = (blog) => {
                     </div>
                 </div>
             </div>
-        </div>`;
+          </div>
+    </div>`;
 
     return blogElement;
 };

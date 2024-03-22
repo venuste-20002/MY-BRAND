@@ -1,9 +1,20 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const horizontalBar = document.getElementById("horizontalBar");
+    const verticalNav = document.querySelector(".vertical .list");
+
+    horizontalBar.addEventListener("click", function() {
+        // Toggle class to show/hide the vertical navigation
+        verticalNav.classList.toggle("active");
+    });
+});
+
+
+
 let blogData = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
   fetchBlogs();
 });
-
 
 
 

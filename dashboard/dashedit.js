@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const horizontalBar = document.getElementById("horizontalBar");
+    const verticalNav = document.querySelector(".vertical .list");
+
+    horizontalBar.addEventListener("click", function() {
+        // Toggle class to show/hide the vertical navigation
+        verticalNav.classList.toggle("active");
+    });
+});
+
+
 let blogId = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -13,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         blogId = id;
 
         const responseData = await response.json();
-        const blogData = responseData.data; // Assuming data is nested under 'data' property
+        const blogData = responseData.data.blog; // Assuming data is nested under 'data' property
         console.log(blogData); // Check if data is fetched correctly
 
         // Populate form fields with fetched data
@@ -31,10 +42,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-async function submitForm(event) {
-    try {
-        event.preventDefault();
+const submitForm = async (event) => {
 
+    event.preventDefault();
+
+    try {
+        
         const title = document.getElementById('a_title').value;
         const desc = document.getElementById('a_desc').value;
         const category = document.getElementById('a_category').value;
@@ -47,7 +60,7 @@ async function submitForm(event) {
             tags: ['hello'],
         };
 
-        console.log("----------------------skjdvk")
+       
         const token = localStorage.getItem("token");
         if (!token) {
             console.log('Token not found in local storage');
@@ -55,14 +68,29 @@ async function submitForm(event) {
 
         // console.log(token)
        
-        const response = await fetch(`http://localhost:3005/api/v1/blogs/${id}`, {
+        // const response = await fetch(`http://localhost:3005/api/v1/blogs/${id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         Authorization: `Bearer ${token}`,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(updateBlog)
+        // });
+
+
+        fetch(`http://localhost:3005/api/v1/blogs/${id}}`, {
+            
             method: 'PUT',
+
             headers: {
+                'Content-Type': 'application/json',
+                // Add any other headers if necessary, such as authorization headers
                 Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updateBlog)
-        });
+            body: JSON.stringify(updateBlog),
+        })
+
+        console.log(updateBlog)
 
         console.log(await response.json());
 

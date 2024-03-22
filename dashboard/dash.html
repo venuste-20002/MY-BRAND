@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="dash.css">
     <meta charset="UTF-8">
@@ -15,33 +15,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
 </head>
-<body>
-    <div class="dashboard">
-     <div class="dashboard1">
-        <div class="dashboardtitle"><p>DASHBOARD</p></div>
-          <ul class="custom-list">
-            <a href="/dashboard/landingblog.html"style="color:white ;"><li><i class="fa fa-newspaper-o" aria-hidden="true" style="color:white"></i> BLOGS</li></a><br>
-            <a href="/dashboard/message.html" style="color: white;"><li><i class="fa fa-comments" aria-hidden="true" style="color:white"></i> Messages</li></a><br>
-            <a href="/dashboard/users.html" style="color: white;"><li><i class="fa fa-users" aria-hidden="true" style="color: white;"></i> USERS </li></a><br>
-        
-            <div class="logout">
-                <a href="../venuste/index.html" id="logout">logout</a>
-            </div>
-        </ul>
+<body class="dashboard">
+    <div class="snackbar">
+        <p>Your message is successfully sent</p>
+    </div>
 
-     </div>
-     
-
-     <div class="manageArticles">
-        <div>
-        <h1>Add A Blog</h1>
+    <div class="horizontal" id="horizontalBar" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+            <a href="#"><img src="DGS_2583-1.JPG" alt="logo"></a>
+            <p>Rukundo venuste</p>
         </div>
-        <div class="manageArticles1">
-        <form action="#" id="form2" id="blogForm" onsubmit="submitForm(event)">
+        <button id="logout" class="btn btn-danger p-0 mt-3" style="height: 30px; margin-right: 20px; cursor: pointer;">Logout</button>
+    </div>
+
+    <div class="nav1">
+        <div class="vertical">
+            <ul class="list">
+                <li id="useless">
+                    <a href="#" class="menu" style="display: flex; right: unset; padding: 2px;">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </a>
+                </li>
+                <a href="landingblog.html"><li><i class="fa fa-newspaper-o" aria-hidden="true"></i> BLOGS</li></a>
+                <a href="commentdash.html"><li><i class="fa fa-briefcase" aria-hidden="true"></i> comment</li></a>
+                <a href="message.html"><li><i class="fa fa-comments" aria-hidden="true"></i> Messages</li></a>
+                <a href="users.html"><li><i class="fa fa-users" aria-hidden="true"></i> USERS </li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="manageArticles">
+        <h1>Add a blog</h1>
+        <form action="#" id="form2">
             <label for="a_title">Add Title: </label><br>
-            <input required type="text" id="a_title" placeholder="Title"><span id="a_titleError" class="error"></span><br>
-            <label for="a_desc">Add Other Name: </label><br>
-            <input required type="text" id="a_desc" placeholder="other"><br>
+            <input required type="text" id="a_title" placeholder="Title"><br>
+            <label for="a_desc">Add Description: </label><br>
+            <input required type="text" id="a_desc" placeholder="Description"><br>
             <label for="a_category">Category:</label><br>
             <select required id="a_category">
                 <option disabled selected>--Choose ----</option>
@@ -55,14 +66,13 @@
             <input required type="file"  id="cover">
             <img id="preview" style="width: 345px;">
             <span class="add">
-                <button type="submit" id="form2_sub">ADD ARTICLE</button>
+                <button type="submit" id="form2_sub">ADD A blog</button>
                 <button type="reset">CANCEL</button>
             </span>
         </form>
     </div>
-     </div>
-     </div>
 
-     <script src="dash.js"></script>
+    <script src="dash.js"></script>
 </body>
 </html>
+
