@@ -242,12 +242,12 @@ body {
 #blog_title {
     text-align: center;
     color: var(--white-text);
-    font-size: 40px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: -40%;
-    left: 50%;
-    margin-top: 100px;
+    left: 45%;
+    margin-top: 50px;
     transform: translate(-50%, -50%);
     padding: 7px 40px 20px 40px;
 }
