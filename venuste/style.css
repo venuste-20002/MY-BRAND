@@ -19,7 +19,7 @@ body{
 /* --------home style ----- */
 /* linear-gradient(rgba(206, 240, 223, 0.4)50%, rgba(206, 240, 223, 0.4)50%), */
 #home{
-    background: rgba(0, 0, 0, 0.6);
+    background:  url(samu.jpeg);
     height: 100vh;
     background-repeat: no-repeat;
     background-size:cover;
@@ -204,7 +204,7 @@ body{
 }
 
 .hero :nth-child(1){
-    color: var(--black);
+    color: white;
     font-size: xx-large;
     font-weight: bolder;
 }
@@ -224,6 +224,7 @@ body{
 }
 .hero :nth-child(3){
     font-size: 25px;
+    color: white;
 }
 .hero :nth-child(4){
 
