@@ -91,7 +91,7 @@
         width: 98vw;
         text-align: right;
         border-top: 0.1px solid var(--lightgray);
-        font-size: 10px;
+        font-size: 8px;
        
     }
    
@@ -170,7 +170,7 @@
     transition: background-color 0.3s ease;
 }
 .form h1{
-    font-size: 18px;
+    font-size: 15px;
     color: var(--green);
     text-align: center;
     margin-bottom: 20px;
@@ -180,7 +180,7 @@
     width: 100%;
     padding: 15px 10px;
     margin-bottom: 15px;
-    font-size: 12px;
+    font-size: 8px;
     border: none;
     border-bottom: 1px solid var(--black);
     outline: none;
