@@ -255,12 +255,12 @@ body {
 .blog_box-1 {
     color: black;
     background-color:white;
-    height: 25vh;
+    height: 30vh;
     width: 1000px;
     transform: translate(-50%, -50%);
 
     position: relative;
-    top:100px;
+    top:80px;
     left: -100px;
     margin-bottom: 20px;
 
