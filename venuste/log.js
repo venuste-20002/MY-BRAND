@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("role:",role)
             localStorage.setItem('token', token) 
             if(role === 'admin'){
-                window.location.href = '/venuste/dashboard/landingblog.html';
+                window.location.href = './dashboard/landingblog.html';
             }else{
                 window.location.href = 'index.html';
             }
