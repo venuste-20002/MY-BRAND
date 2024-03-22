@@ -38,9 +38,8 @@ const createContactElement = (contact) => {
     contactElement.classList.add('card', 'mt-4', 'p-3');
 
     contactElement.innerHTML = `
-        <h4 class="cart-title">Name:${contact.sendmessage}</h4>
-        <div class="card-subtitle text-muted mb-2">email:${contact.email}
-        </div>
+        <h4 class="cart-title">Name: ${contact.sendmessage}</h4>
+        <div class="card-subtitle text-muted mb-2">Email: ${contact.email}</div>
         <div class="dart-text mb-2">
             <div>
                 <a href="viewmessage.html?id=${contact._id}" class="btn btn-primary">Read More</a>
@@ -100,7 +99,7 @@ document.addEventListener('click', async (event) => {
             // After deletion, fetch and display updated contacts
             fetchContacts();
         } catch (error) {
-            // console.error('Error deleting contact:', error);
+            console.error('Error deleting contact:', error);
             // Handle error appropriately
         }
     }
