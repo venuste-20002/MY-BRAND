@@ -77,8 +77,9 @@ const submitForm = async (event) => {
         //     body: JSON.stringify(updateBlog)
         // });
 
+        console.log(blogId);
 
-        fetch(`http://localhost:3005/api/v1/blogs/${id}}`, {
+        const response = await fetch(`http://localhost:3005/api/v1/blogs/${blogId}`, {
             
             method: 'PUT',
 
@@ -90,7 +91,7 @@ const submitForm = async (event) => {
             body: JSON.stringify(updateBlog),
         })
 
-        console.log(updateBlog)
+        // console.log(updateBlog)
 
         console.log(await response.json());
 

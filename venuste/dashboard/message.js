@@ -82,8 +82,12 @@ document.addEventListener('click', async (event) => {
     if (event.target.classList.contains('delete-contact')) {
         const contactId = event.target.dataset.contactId;
         try {
+            // Show confirmation dialog
+            const confirmed = confirm("Are you sure you want to delete this contact?");
+            if (!confirmed) return; // If not confirmed, do nothing
+
             // Retrieve token (you need to implement your logic here)
-            const token = getAuthToken();
+            const token = localStorage.getItem('token');
 
             // Send DELETE request to backend API to delete the contact
             const response = await fetch(`http://localhost:3005/api/v1/messages/${contactId}`, {
@@ -110,3 +114,4 @@ function getAuthToken() {
     // Replace this with your actual token retrieval logic
     return 'your_auth_token';
 }
+

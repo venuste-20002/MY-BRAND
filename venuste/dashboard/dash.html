@@ -39,7 +39,6 @@
                     </a>
                 </li>
                 <a href="landingblog.html"><li><i class="fa fa-newspaper-o" aria-hidden="true"></i> BLOGS</li></a>
-                <a href="commentdash.html"><li><i class="fa fa-briefcase" aria-hidden="true"></i> comment</li></a>
                 <a href="message.html"><li><i class="fa fa-comments" aria-hidden="true"></i> Messages</li></a>
                 <a href="users.html"><li><i class="fa fa-users" aria-hidden="true"></i> USERS </li></a>
             </ul>
@@ -48,7 +47,7 @@
 
     <div class="manageArticles">
         <h1>Add a blog</h1>
-        <form action="#" id="form2">
+        <form action="#" id="form2"  onsubmit="submitForm(event)" >
             <label for="a_title">Add Title: </label><br>
             <input required type="text" id="a_title" placeholder="Title"><br>
             <label for="a_desc">Add Description: </label><br>

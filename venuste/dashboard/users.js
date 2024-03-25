@@ -20,50 +20,52 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for confirming deletion
     confirmButton.addEventListener('click', function() {
-        deleteUser(overlay.dataset.userId, getAuthToken());
+        const user_d = overlay.dataset.userId; // Corrected variable name
+        deleteUser(user_d); // Passing user_d to deleteUser function
         overlay.style.display = 'none';
     });
 
     // Event listener for canceling deletion
-    cancelButton.addEventListener('click', function() {
-        overlay.style.display = 'none';
-    });
+    // cancelButton.addEventListener('click', function() {
+    //     overlay.style.display = 'none';
+    // });
 });
 
 // Function to confirm user deletion
 function deleteUserConfirmation(userId) {
     const overlay = document.getElementById('overlay');
-    overlay.dataset.userId = userId;
+    overlay.dataset.userId = userId; // Corrected dataset name
     overlay.style.display = 'block';
 }
 
 // Function to delete a user
-function deleteUser(userId, token) {
-    console.log("Deleting user with ID:", userId);
+const deleteUser = async (userId) =>{ // Corrected parameter name
+    try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`http://localhost:3005/api/v1/users/${userId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
 
-    fetch(`http://localhost:3005/api/v1/users/${userId}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    })
-    .then((response) => {
         if (!response.ok) {
             throw new Error('Failed to delete user');
         }
-        return response.json();
-    })
-    .then((data) => {
-        console.log(data);
+
+        const data = await response.json();
         alert("User deleted successfully");
         // Optionally refresh the user list after deletion
         showUsers();
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Error deleting user:', error);
         alert("Failed to delete user. Please try again later.");
-    });
+    }
 }
+
+// Rest of the code remains the same...
+
+
 
 // Function to create HTML for a single user
 function singleUser(user) {
@@ -75,7 +77,6 @@ function singleUser(user) {
         <div class="card-text mb-2">
             Joined at: ${user.createdAt}
             <div>
-                <a onclick="" class="btn btn-primary">Activities</a>
                 <a onclick="deleteUserConfirmation('${user._id}')" class="btn btn-danger">Remove</a>
             </div>
         </div>
@@ -89,7 +90,6 @@ function showUsers() {
     fetch('http://localhost:3005/api/v1/users/users')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             const users = data.data;
             users.forEach(user => singleUser(user));
         })

@@ -158,9 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     
-    console.log(id);
-    
-    let blogData; // Define blogData variable
+
+    if (!id) {
+        console.error('No ID found in the URL parameters');
+        return;
+    }
+
+    fetchBlog(id);
+   
+}); 
+
+   
     
     const fetchBlog = async (id) => {
         try {
@@ -169,22 +177,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Failed to load the blog');
             }
     
-            const data = await response.json();
-            blogData = data.data;
+           const data = await response.json();
+           const blogData = data.data;
             
-            displayBlog(blogData); // Pass blogData to displayBlog
+            displayBlog(blogData.blog); // Pass blogData to displayBlog
         } catch (error) {
             // console.error('Error fetching blog:', error);
         }
     };
     
-    fetchBlog(id);
     // `<div ><h1> ${message.sendmessage} </h1> </div>`
     const displayBlog = (blog) => {
         const allBlogs = document.getElementById('display_blog');
         const blogElement = createBlogElement(blog);
-        allBlogs.appendChild(blogElement);
+        allBlogs.appendChild(blogElement); 
+    
     };
+    
     
     const createBlogElement = (blog) => {
         const blogElement = document.createElement('div');
@@ -193,55 +202,55 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="category" style="color:#4E7598; font-weight: bold; ">${blog.title}</p>
             <p class="date">${blog.createdAt}</p>
             <p class="writer"><strong>By</strong> <span style="color: #4E7598; font-weight: bold;">${blog.author}</span>, Executive Editor, RemakTek Python in AI</p>
-            <img class="blog_image" src="../photos/food.jpg">
+            <img class="blog_image" src="${blog.image}">
             <p class="blog_content">${blog.content}</p>
             <hr style="margin: 7vh 0;">
         `;
         return blogElement;
     };
-});
 
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const commentForm = document.getElementById('commentForm');
 
-    commentForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const comment = document.getElementById("comment").value.trim();
-        const blogId = document.getElementById("blogId").value.trim(); // Retrieve blogId
+// document.addEventListener('DOMContentLoaded', () => {
+//     const commentForm = document.getElementById('commentForm');
 
-        // input of the  fetch
-        if (!name || !email || !comment || !blogId) {
-            showError('Please enter both name, email, and comment.');
-            return;
-        }
+//     commentForm.addEventListener('submit', async (event) => {
+//         event.preventDefault();
+//         const name = document.getElementById("name").value.trim();
+//         const email = document.getElementById("email").value.trim();
+//         const comment = document.getElementById("comment").value.trim();
+//         const blogId = document.getElementById("blogId").value.trim(); // Retrieve blogId
 
-        try {
-            console.log(name)
-            const response = await fetch('http://localhost:3005/api/v1/comments/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, comment, blogId })
-            });
+//         // input of the  fetch
+//         if (!name || !email || !comment || !blogId) {
+//             showError('Please enter both name, email, and comment.');
+//             return;
+//         }
 
-            if (!response.ok) { 
-                const errorData = await response.json();
-                throw new Error(errorData.message || 'Failed to create');
-            }
+//         try {
+//             console.log(name)
+//             const response = await fetch('http://localhost:3005/api/v1/comments/create', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({ name, email, comment, blogId })
+//             });
 
-            const data = await response.json();
-            const commentData = data.data;
-            console.log(commentData);
+//             if (!response.ok) { 
+//                 const errorData = await response.json();
+//                 throw new Error(errorData.message || 'Failed to create');
+//             }
 
-            window.location.href = 'log.html';
-        } catch (error) {
-            showError(error.message || 'Failed to create. Please try again.');
-        }
-    });
-});
+//             const data = await response.json();
+//             const commentData = data.data;
+//             console.log(commentData);
+
+//             window.location.href = 'log.html';
+//         } catch (error) {
+//             showError(error.message || 'Failed to create. Please try again.');
+//         }
+//     });
+// });

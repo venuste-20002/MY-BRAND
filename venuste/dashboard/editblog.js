@@ -23,7 +23,8 @@ const fetchBlog = async (id) => {
         console.log(blogData);
         console.log(blogData.comments)
 
-        displayComments(comments)
+        // displayComments(comments)
+        
         displayBlog(blogData.blog);
     } catch (error) {
         // console.error('Error fetching blog:', error);
@@ -50,7 +51,7 @@ const createBlogElement = (blog) => {
                 <p class="blog">${blog.content}</p>
             </div>
             <div id="rectangle">
-                <img class="profile" src="${blog.profile}" alt="Profile Image">
+                <img class="profile" src="${blog.image}" alt="Profile Image">
             </div>
             <div class="rectangle1">
                 <button class="edit_button" data-id="${blog.id}" onclick="navigateToEditBlogPage('${blog._id}')">Edit Blog</button>

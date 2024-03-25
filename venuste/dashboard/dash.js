@@ -1,64 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const horizontalBar = document.getElementById("horizontalBar");
-    const verticalNav = document.querySelector(".vertical .list");
+// Define showError function
+function showError(errorMessage) {
+    const errorElement = document.getElementById('error');
+    errorElement.textContent = errorMessage;
+}
 
-    horizontalBar.addEventListener("click", function() {
-        // Toggle class to show/hide the vertical navigation
-        verticalNav.classList.toggle("active");
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const blogForm = document.getElementById('form2');
 });
 
+const submitForm = async (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-
-let blogData = [];
-
-document.addEventListener('DOMContentLoaded', async () => {
-  fetchBlogs();
-});
-
-
-
-
-async function submitForm(event) {
     try {
-        event.preventDefault();
+        const title = document.getElementById("a_title").value.trim();
+        const description = document.getElementById("a_desc").value.trim();
+        const category = document.getElementById("a_category").value.trim();
+        const content = document.getElementById("a_content").value.trim();
+        const coverInput = document.getElementById("cover");
+        const coverFile = coverInput.files[0];
 
-        const title = document.getElementById('a_title').value;
-        const desc = document.getElementById('a_desc').value;
-        const category = document.getElementById('a_category').value;
-        const content = document.getElementById('a_content').value;
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('category', category);
+        formData.append('content', content);
+        formData.append('tags', 'hello');
+        formData.append('image', coverFile);
 
-        const Blog = {
-            title: title,
-            desc: description,
-            content: content
-        };
         const token = localStorage.getItem("token");
         if (!token) {
             console.log('Token not found in local storage');
         }
 
-        // console.log(token)
+        const response = await fetch('http://localhost:3005/api/v1/blogs/create', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            body: formData
+        });
 
-        console.log(response);
-
-     
+        console.log(await response.json());
+        
         if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.blog || 'Failed to update blog');
+            throw new Error(errorData.message || 'Failed to create blog');
         }
 
-        window.location.href = "landingblog.html";
-
+        window.location.href = 'landingblog.html'; // Redirect to landingblog.html after successful blog creation
     } catch (error) {
-        
-        // console.error('Error updating blog:', error.message);
+        // If there's an error during the request, display the error message
+        console.error(error.message || 'Failed to create blog. Please try again.');
+        showError(error.message || 'Failed to create blog. Please try again.');
     }
 }
-
-
-
-
 
 
 
