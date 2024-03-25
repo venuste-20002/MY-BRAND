@@ -96,8 +96,8 @@ const fetchBlogs = async () => {
 };
 
 // Function to navigate to one blog page
-const navigatToOneBlogPage = (id) => {
-    window.location.href = `editblog.html?id=${id}`;
+const navigatToOneBlogPage = (_id) => {
+    window.location.href = `editblog.html?id=${_id}`;
 };
 
 // Function to delete a blog
