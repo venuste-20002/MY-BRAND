@@ -90,9 +90,6 @@ const fetchBlogs = async () => {
 
         // Display the blogs
         displayBlogs();
-        const navigatToOneBlogPage = (id) => {
-            window.location.href = `./editblog.html?id=${id}`;
-        };
     } catch (error) {
         console.error("Error fetching blog:", error);
     }
@@ -100,7 +97,7 @@ const fetchBlogs = async () => {
 
 // Function to navigate to one blog page
 const navigatToOneBlogPage = (id) => {
-    window.location.href = `./editblog.html?id=${id}`;
+    window.location.href = `editblog.html?id=${id}`;
 };
 
 // Function to delete a blog
