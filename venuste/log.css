@@ -58,6 +58,8 @@
     top: 1.5rem;
     right: .75rem;
     display: none;
+    color: white;
+    background-color: black;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;

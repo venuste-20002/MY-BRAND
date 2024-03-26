@@ -1,3 +1,41 @@
+const menu = document.getElementsByClassName('menu')[0]
+const navlist = document.getElementsByClassName(' navlist')[0]
+
+menu.addEventListener('click', () => {
+    navlist.classList.toggle('active')
+})
+
+const buttons = document.querySelectorAll("[data-carousel-Button]")
+console.log("hello")
+console.log(buttons)
+buttons.forEach((button) => {
+    button.addEventListener('click', ()=> {
+        const offset = button.dataset.carouselButton === "next" ? 1 : -1
+        const slides = button
+            .closest("[data-carousel]")
+            .querySelector("[data-slides]")
+
+
+        const activeSlide = slides.querySelector("[data-active]")
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset
+
+        if (newIndex < 0) newIndex = slides.children.length - 1 
+        if (newIndex >= slides.children.length) newIndex = 0
+
+        slides.children[newIndex].dataset.active = true
+
+        delete activeSlide.dataset.active
+
+
+    } )
+    
+});
+
+
+
+
+
+
 // Define showError function
 function showError(errorMessage) {
     const errorElement = document.getElementById('error');
