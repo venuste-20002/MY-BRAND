@@ -53,7 +53,8 @@ const createBlogElement = (blog) => {
                 <hr style="width: 100%; height: 0.5px; border: none; background-color:black;">
                 <div class="icons">
                     <div class="icon1">
-                        <i class="fa-solid fa-eye" onclick="navigatToOneBlogPage('${blog._id}')"></i>
+                       
+                        <i class="fa-regular fa-eye" onclick="navigatToOneBlogPage('${blog._id}')" ></i>
                     </div>
                     <div class="icon3">
                         <i class="fa-solid fa-trash" onclick="deleteBlog('${blog._id}')"></i> 
